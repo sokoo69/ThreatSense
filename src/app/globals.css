@@ -1,0 +1,132 @@
+@import "tailwindcss";
+
+:root {
+  --background: #0e0e0f;
+  --foreground: #ededee;
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  --font-bengali: 'Noto Sans Bengali', system-ui, sans-serif;
+  --accent-indigo: #5b5bd6;
+}
+
+body {
+  background-color: #0e0e0f;
+  color: #ededee;
+  font-family: var(--font-sans);
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+/* Typography Helpers */
+.font-bengali {
+  font-family: var(--font-bengali);
+}
+
+.font-mono-numbers {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+}
+
+/* Minimalist Dark Scrollbars */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #2a2a2d;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #3f3f46;
+}
+
+/* Control Buttons & Flat Minimalist Aesthetics */
+.btn-control {
+  background-color: #1c1c1e;
+  color: #d1d1d6;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  transition: all 0.15s ease-in-out;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.btn-control:hover {
+  background-color: #2c2c2e;
+  color: #ffffff;
+}
+
+.btn-primary-indigo {
+  background-color: #5b5bd6;
+  color: #ffffff;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  transition: all 0.15s ease-in-out;
+}
+
+.btn-primary-indigo:hover {
+  background-color: #6e6ee3;
+}
+
+/* Subtle In-Video HUD Panel */
+.hud-panel {
+  background-color: rgba(0, 0, 0, 0.72);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-radius: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  line-height: 1.35;
+  color: #d4d4d8;
+  pointer-events: auto;
+}
+
+/* Pulse animation for Masking state */
+@keyframes violetPulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(192, 38, 211, 0.4);
+    border-color: rgba(192, 38, 211, 0.85);
+  }
+  50% {
+    box-shadow: 0 0 16px 2px rgba(192, 38, 211, 0.6);
+    border-color: rgba(232, 121, 249, 1);
+  }
+}
+
+.pulsing-violet-box {
+  animation: violetPulse 2s infinite ease-in-out;
+}
+
+/* Operator dashboard */
+.monitor-root {
+  font-family: 'Inter', 'Noto Sans Bengali', system-ui, sans-serif;
+}
+
+/* One flash every 1.2s stays well under the three-per-second photosensitivity limit. */
+@keyframes threatFlash {
+  0%, 100% {
+    background-color: #7e22ce;
+    box-shadow: 0 0 0 2px #d8b4fe;
+  }
+  50% {
+    background-color: #4c1d95;
+    box-shadow: 0 0 0 2px transparent;
+  }
+}
+
+.threat-flash {
+  animation: threatFlash 1.2s infinite ease-in-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .threat-flash {
+    animation: none;
+    box-shadow: 0 0 0 2px #d8b4fe;
+  }
+}

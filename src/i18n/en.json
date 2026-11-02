@@ -1,0 +1,153 @@
+{
+  "app": {
+    "title": "ThreatSense",
+    "subtitle": "Dual-Stream Threat Prediction & Affective Masking Detection",
+    "disclaimer": "Decision-support tool. Predictions may be incorrect; human review required.",
+    "modelStatus": "Mock Inference Active",
+    "live": "LIVE",
+    "demoMode": "Demo Scenarios",
+    "audioAlert": "Audio Alert",
+    "soundMuted": "Sound Muted",
+    "soundUnmuted": "Sound Active"
+  },
+  "nav": {
+    "live": "Live Monitor",
+    "upload": "Upload Analysis",
+    "settings": "Settings & Lexicon",
+    "history": "History / Logs",
+    "about": "About & Pipeline"
+  },
+  "streams": {
+    "streamA": "Stream A: Face Emotion",
+    "streamB": "Stream B: Bengali Lip Reading (LipBengal)",
+    "continuousNotice": "Both streams run continuously in parallel. Lip reading is NEVER gated by facial emotion.",
+    "mouthMotion": "Lip Movement Amplitude (A_vol)",
+    "speaking": "Speaking Detected",
+    "silent": "No Speech Detected",
+    "romanized": "Transliteration (Romanized)",
+    "threatWords": "Detected Threat Tokens",
+    "noThreatWords": "No threat tokens detected in current window",
+    "emotionRisk": "Emotion Risk (R_e)",
+    "lipThreat": "Lip Threat (T_lip)",
+    "baselineMarker": "Benign Baseline"
+  },
+  "discrepancy": {
+    "title": "Cross-Modal Discrepancy (D_cross)",
+    "subtitle": "Divergence between verbal threat and facial affect",
+    "maskingAlert": "AFFECTIVE MASKING DETECTED",
+    "normal": "Cross-Modal Alignment Normal",
+    "formula": "D_cross = max(0, T_lip - R_e) · Multiplier",
+    "explanation": "Attacker keeps a calm or smiling exterior while uttering Bengali threats."
+  },
+  "threatScore": {
+    "title": "Composite Threat Assessment",
+    "gaugeLabel": "Threat Index",
+    "low": "LOW THREAT",
+    "medium": "MEDIUM THREAT",
+    "high": "HIGH THREAT",
+    "breakdown": "Mathematical Contribution Breakdown",
+    "elevatedFloor": "Threat floor elevated due to Affective Masking detection"
+  },
+  "timeline": {
+    "title": "Real-Time Dual-Stream Telemetry",
+    "subtitle": "Sliding window of R_e, T_lip, D_cross, and composite Threat %",
+    "threat": "Threat %",
+    "emotionRisk": "Emotion Risk (R_e)",
+    "lipThreat": "Lip Threat (T_lip)",
+    "discrepancy": "Discrepancy (D_cross)"
+  },
+  "pipeline": {
+    "title": "Dual-Stream Neural Pipeline State",
+    "camera": "Camera Feed",
+    "streamA": "CNN Face Stream",
+    "streamB": "LipBengal Stream",
+    "threatEngine": "Threat Engine Fusion",
+    "output": "Alert Dispatch"
+  },
+  "emotions": {
+    "angry": "Angry",
+    "neutral": "Neutral",
+    "disgust": "Disgust",
+    "sad": "Sad",
+    "happy": "Happy",
+    "fear": "Fear",
+    "surprise": "Surprise"
+  },
+  "scenarios": {
+    "title": "Demo Scenarios",
+    "select": "Switch Scenario",
+    "calm": "1. Benign Baseline (Calm)",
+    "rising_anger": "2. Rising Hostility (Anger + Threat)",
+    "fear_spike": "3. Panic & Fear Spike",
+    "affective_masking": "4. Affective Masking (Smile + Threat)",
+    "true_negative": "5. True Negative (Calm Speech)"
+  },
+  "camera": {
+    "startWebcam": "Start Webcam",
+    "stopWebcam": "Stop Webcam",
+    "simulateFeed": "Simulate Camera Feed",
+    "permissionDenied": "Camera access denied. Operating in high-fidelity simulated camera mode.",
+    "roiFace": "Face ROI",
+    "roiMouth": "Mouth ROI"
+  },
+  "settings": {
+    "title": "Thresholds & Engine Parameters",
+    "subtitle": "Configure thesis formulas, risk multipliers, and Bengali lexicon",
+    "emotionWeights": "Per-Emotion Risk Weights",
+    "baselines": "Ground Truth Benign Baselines",
+    "fusionWeights": "Fusion Contributions (α, β, γ)",
+    "maskingThreshold": "Affective Masking Trigger Threshold",
+    "volScaling": "Mouth Amplitude Scaling g(A_vol)",
+    "resetDefaults": "Reset to Thesis Defaults",
+    "saved": "Settings saved successfully",
+    "lexiconTitle": "Bengali Threat Lexicon Management",
+    "addWord": "Add Bengali Threat Word",
+    "word": "Bengali Word",
+    "romanized": "Romanized",
+    "weight": "Weight (θ_W)",
+    "category": "Category",
+    "actions": "Actions"
+  },
+  "history": {
+    "title": "Telemetry Logs & Threat History",
+    "subtitle": "Auditable event stream with complete mathematical trace",
+    "filterBand": "Filter by Threat Band",
+    "allBands": "All Bands",
+    "maskingOnly": "Masking Events Only",
+    "search": "Search transcript or keyword...",
+    "exportCsv": "Export CSV (UTF-8 BOM)",
+    "clearLogs": "Clear Log History",
+    "time": "Timestamp",
+    "emotion": "Dominant Emotion",
+    "transcript": "Bengali Transcript",
+    "tLip": "T_lip",
+    "dCross": "D_cross",
+    "threatPct": "Threat %",
+    "status": "State",
+    "empty": "No log records recorded yet."
+  },
+  "upload": {
+    "title": "Offline Video Threat Analysis",
+    "subtitle": "Process pre-recorded video through parallel dual-stream engine",
+    "dropzone": "Drag & drop surveillance video or click to browse",
+    "formats": "Supported formats: MP4, WebM, AVI (Max 150MB)",
+    "processing": "Processing Video Stream...",
+    "windowProgress": "Window Analysis Progress",
+    "summaryTitle": "Video Surveillance Threat Report",
+    "peakThreat": "Peak Threat Score",
+    "maskingCount": "Masking Incidents",
+    "avgEmotion": "Dominant Emotion",
+    "wordsDetected": "Threat Words Detected",
+    "startAnalysis": "Run Dual-Stream Analysis",
+    "demoVideo": "Load Sample Surveillance Clip"
+  },
+  "about": {
+    "title": "System Architecture & Research Premise",
+    "subtitle": "Why Bengali Lip Reading is Never Gated by Facial Emotion",
+    "premiseTitle": "The Research Premise: Affective Masking",
+    "premiseText": "Deceptive perpetrators and high-risk actors frequently conceal hostile intent behind an impassive, pleasant, or smiling facial facade. In high-stakes security checkpoints and interviews, an attacker may utter lethal commands (e.g. 'বোমা', 'গুলি') while actively supressing emotional leakage. Traditional single-stream systems fail because benign facial expressions gate speech analysis. ThreatSense maintains both streams concurrently at all times.",
+    "mathTitle": "Mathematical Formulations & Thesis Notation",
+    "linguisticTitle": "Bengali Visual Speech Recognition (Visemes)",
+    "linguisticText": "Bengali phonetic structure presents unique visual disambiguation challenges: aspirated vs unaspirated bilabials (ব vs ভ, প vs ফ), dental vs retroflex consonants (ত vs ট, দ vs ড), and nasalized vowels. LipBengal combines 3D convolutional frontends with conformer temporal encoders to capture Bengali viseme dynamics."
+  }
+}
